@@ -11,3 +11,4 @@ class Employee(models.Model):
 
     def __str__(self):
         return self.id + self.name + self.salary
+    
