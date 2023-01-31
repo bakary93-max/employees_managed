@@ -1,7 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from .views import employee_list
+from .views import EmployeeList, EmployeeDetail
 
 urlpatterns = [
-    path('emps/', employee_list)
+    path('employees/', EmployeeList.as_view()),
+    path('employees/<int:pk>', EmployeeDetail.as_view())
 ]
