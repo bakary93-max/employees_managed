@@ -83,6 +83,6 @@ class EmployeeDetail(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     def delete(self, request, pk):
-        employee = self.request.objects(pk)
+        employee = self.get_object(pk)
         employee.delete()
         return Response(status.HTTP_204_NO_CONTENT)
