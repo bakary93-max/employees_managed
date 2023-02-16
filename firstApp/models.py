@@ -10,5 +10,6 @@ class Employee(models.Model):
     salary = models.DecimalField(max_digits=10, decimal_places=3)
 
     def __str__(self):
-        return self.id + self.name + self.salary
+        template = '{0.id} {0.name} {0.salary}'
+        return template.format(self)
     
